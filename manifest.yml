@@ -1,0 +1,8 @@
+---
+ applications:
+ - name: vertx-bluemix
+   memory: 512M
+   instances: 1
+   buildpack: java_buildpack
+   host: vertx-mspisiak
+   path: ./target/vertx-bluemix-1.0-SNAPSHOT-fat.jar
