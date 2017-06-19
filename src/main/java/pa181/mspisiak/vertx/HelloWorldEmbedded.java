@@ -2,9 +2,6 @@ package pa181.mspisiak.vertx;
 
 import io.vertx.core.Vertx;
 
-/**
- * @author Martin Spišiak (mspisiak@redhat.com) on 18/06/17.
- */
 public class HelloWorldEmbedded {
 	public static void main(String[] args) {
 		String portProperty = System.getenv("PORT");
