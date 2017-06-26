@@ -109,7 +109,7 @@
             productAction.unbind();
             var modal = $(this);
             if (action === "add") {
-                modal.find('.modal-title').text("Add a bottle");
+                modal.find('.modal-title').text("Add a book");
                 modal.find('#product-name').val("");
                 modal.find('#product-author').val("");
                 productAction.click(function () {
@@ -117,7 +117,7 @@
                     $('#productModal').modal('toggle');
                 });
             } else {
-                modal.find('.modal-title').text("Edit a bottle");
+                modal.find('.modal-title').text("Edit a book");
                 modal.find('#product-name').val(button.data("name"));
                 modal.find('#product-author').val(button.data("author"));
                 productAction.click(function () {
@@ -133,7 +133,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                <h4 class="modal-title" id="productModalTitle">Add a bottle</h4>
+                <h4 class="modal-title" id="productModalTitle">Add a book</h4>
             </div>
             <div class="modal-body">
                 <form>
