@@ -11,7 +11,7 @@
     <properties>
         <!-- the main class -->
         <exec.mainClass>io.vertx.core.Launcher</exec.mainClass>
-        <exec.mainVerticle>pa181.mspisiak.vertx.MyFirstVerticle</exec.mainVerticle>
+        <exec.mainVerticle>pa181.mspisiak.vertx.AppVerticle</exec.mainVerticle>
         <vertx.version>3.4.1</vertx.version>
         <!-- JDBC settings -->
         <url>jdbc:hsqldb:file:db/whiskies</url>
@@ -207,7 +207,7 @@
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <manifestEntries>
                                         <Main-Class>io.vertx.core.Launcher</Main-Class>
-                                        <Main-Verticle>pa181.mspisiak.vertx.MyFirstVerticle</Main-Verticle>
+                                        <Main-Verticle>pa181.mspisiak.vertx.AppVerticle</Main-Verticle>
                                     </manifestEntries>
                                 </transformer>
                             </transformers>

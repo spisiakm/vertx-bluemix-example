@@ -19,7 +19,7 @@ import java.net.ServerSocket;
  * This is our JUnit test for our verticle. The test uses vertx-unit, so we declare a custom runner.
  */
 @RunWith(VertxUnitRunner.class)
-public class MyFirstVerticleTest {
+public class AppVerticleTest {
 
 	private Vertx vertx;
 	private Integer port;
@@ -50,7 +50,7 @@ public class MyFirstVerticleTest {
 				);
 
 		// We pass the options as the second parameter of the deployVerticle method.
-		vertx.deployVerticle(MyFirstVerticle.class.getName(), options, context.asyncAssertSuccess());
+		vertx.deployVerticle(AppVerticle.class.getName(), options, context.asyncAssertSuccess());
 	}
 
 	/**
@@ -77,12 +77,11 @@ public class MyFirstVerticleTest {
 		// message. Then, we call the `complete` method on the async handler to declare this async (and here the test) done.
 		// Notice that the assertions are made on the 'context' object and are not Junit assert. This ways it manage the
 		// async aspect of the test the right way.
-		vertx.createHttpClient().getNow(port, "localhost", "/", response -> {
-			response.handler(body -> {
-				context.assertTrue(body.toString().contains("Hello"));
-				async.complete();
-			});
-		});
+		vertx.createHttpClient().getNow(port, "localhost", "/",
+				response -> response.handler(body -> {
+					context.assertTrue(body.toString().contains("Hello"));
+					async.complete();
+		}));
 	}
 
 	@Test

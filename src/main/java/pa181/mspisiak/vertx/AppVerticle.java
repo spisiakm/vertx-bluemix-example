@@ -23,7 +23,7 @@ import io.vertx.ext.web.handler.StaticHandler;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MyFirstVerticle extends AbstractVerticle {
+public class AppVerticle extends AbstractVerticle {
 
 	private JDBCClient jdbc;
 	private ConfigRetriever retriever;
@@ -99,6 +99,9 @@ public class MyFirstVerticle extends AbstractVerticle {
 		router.put("/api/books/:id").handler(this::updateOne);
 		router.delete("/api/books/:id").handler(this::deleteOne);
 
+		// This port setup is necessary because of how Bluemix environment handles ports.
+		// In this case, the port setting in configuration file is redundant, it is still there however,
+		// just to show how one could set port through a configuration file,
 		String portProperty = System.getenv("PORT");
 		if(portProperty==null)
 			portProperty = System.getenv("VCAP_APP_PORT");

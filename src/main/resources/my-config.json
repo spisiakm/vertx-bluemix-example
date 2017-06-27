@@ -1,5 +1,5 @@
 {
   "http.port": 8082,
-  "url": "jdbc:hsqldb:file:db/whiskies",
+  "url": "jdbc:hsqldb:file:db/books",
   "driver_class": "org.hsqldb.jdbcDriver"
 }
